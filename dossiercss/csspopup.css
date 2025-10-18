@@ -1,0 +1,1269 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#popup-overlay{
+    position: fixed;
+    top: 10%;
+    left: 20%;
+    right: 1%;
+    bottom: 10%;
+    display: none;
+    background: #FFFFFF;
+    border: 2px solid #FFF;
+    border-radius: 5px;
+}
+.popup-content{
+    position: fixed;
+    top: 15%;
+    left: 20%;
+    right: 1%;
+    bottom: 10%;
+    background: silver;
+    border: 2px solid #FFF;
+    border-radius: 5px;
+    
+}
+a.popup-exit{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: #000;
+    background-color: white;
+    
+}
+.popup-exit:hover{
+    border-radius: 2px;
+    padding: 0% 1% 0% 1%;
+    margin: 0% 0% 1% 0%;
+    color: #FFF;
+    border: 1px solid #f20606;
+    background-color: #f20606;
+}
+h3.popup-espace{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-transform: uppercase;
+    color: #000;
+    background-color: #FFF;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+h1.popup-vente{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-transform: uppercase;
+    color: #024f02;
+    background-color: silver;
+    border-radius: 2px;
+}
+.popup-btnvente{
+    position: absolute;
+    top: 10%;
+    margin-right: 0%;
+    right: 0%;
+    text-transform: uppercase;
+    color: #024f02;
+    background-color: silver;
+    border-radius: 2px;
+    pointer-events:visible;
+    font: 1em sans-serif;
+}
+
+
+/*tableau pour afficher la listes des produit vendu s*/
+.popup-tableauv{
+    position:fixed;
+    top: 23%;
+    left: 21%;
+    right: 50%;
+    bottom: 15%;
+    background: #FFF;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 5px;
+    overflow-y: auto;
+    overflow-x: 50%;
+    width: 63%;
+    padding: 0%;
+    margin: 0%;   
+}
+.tableauv{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #FFFFFF;
+}
+thead.entetev th{
+    color: #FFFFFF; 
+    background-color:green;
+    border: 3px solid #FFFFFF; 
+    width: 0%; 
+    text-align: center;
+}
+.corp tr:nth-child(odd){
+    background-color: gainsboro; 
+}
+.corp tr:nth-child(even){
+    
+    background-color: #fd9d9d;
+}
+tbody tr:nth-child(odd):hover{
+    background-color: blue;
+    color: #FFFFFF;
+    border: 1px solid white;
+}
+tbody tr:nth-child(even):hover{
+    background-color: blue;
+    color: #FFFFFF;
+    border: 1px solid white;
+}
+
+
+/* sous popup pourformulaire ajout vente*/
+#popup-Ajout{
+    position: fixed;
+    top: 10%;
+    left: 20%;
+    right: 1%;
+    bottom: 10%;
+    display: none;
+    background: #FFFFFF;
+    border: 2px solid #FFF;
+    border-radius: 5px;
+    
+}
+.popup-form{
+    position: fixed;
+    top: 15%;
+    left: 20%;
+    right: 1%;
+    bottom: 10%;
+    background: silver;
+    border: 2px solid #FFF;
+    border-radius: 5px;
+    
+}
+.popup-exit{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: #000;
+    background-color: #FFFFFF;
+    
+}
+.popup-exit:hover{
+    border-radius: 2px;
+    padding: 0% 1% 0% 1%;
+    margin: 0% 0% 1% 0%;
+    color: #FFF;
+    border: 1px solid #f20606;
+    background-color: #f20606;
+}
+div.form{
+    position: absolute;
+    border: 2px solid black;
+    background-color: silver;
+    top: 1%;
+    left: 1%;
+    width: 34%;
+    height: 83%;
+    border-radius: 5px;;  
+     
+}
+.popup-cadre1-vente{
+    position: fixed;
+    border: 1px solid#000;
+    background-color: rgb(216, 223, 225);
+    margin-left: 1%;
+    width: 25%;
+    box-sizing: border-box;  
+    text-align: center; 
+}
+.popup-cadre2-vente{
+    top: 43%;
+    position: fixed;
+    border: 1px solid#000;
+    background-color: rgb(216, 223, 225);
+    margin-left: 1%;
+    width: 25%;
+    box-sizing: border-box;
+    text-align: center;
+}
+.popup-cadre1-vente input{
+    box-sizing: border-box;
+    width: 80%;
+}
+ input.champlong {
+    box-sizing: border-box;
+    width: 70%;
+}
+input.champcourt{
+    box-sizing: border-box;
+    width: 25%;
+}
+.info-article{
+font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+color: #000;
+border: 1px solid black;
+border-radius: 5px;
+background-color: #FFFFFF;
+}
+.info-vente{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #000;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    
+}
+
+h1.popup-vente{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-transform: uppercase;
+    color: #024f02;
+    background-color: silver;
+    border-radius: 2px;
+}
+
+button.ajouter{
+    position: absolute;
+    bottom: 1%;
+    left: 1%;
+    text-transform: uppercase;
+    color: #000;
+    background-color: silver;
+    border-radius: 5px;
+    font-size: 1.5em;
+}
+
+button.validerv{
+    position: absolute;
+    bottom: 1%;
+    right: 0%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    background-color: green;
+    border-radius: 5px;
+    font-size: 1.5em;
+
+}
+button.validerv:hover{
+    position: absolute;
+    bottom: 1%;
+    right: 0%;
+    text-transform: uppercase;
+    color: #000;
+    background-color: silver;
+    border-radius: 5px;
+    font-size: 1.5em;
+
+}
+button.ajouter:hover{
+    position: absolute;
+    bottom: 1%;
+    left: 1%;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    background-color: green;
+    border-radius: 5px;
+    font-size: 1.5em;
+
+}
+.popup-facture-formv{
+    position: absolute;
+    top: 5%;
+    left: 38%;
+    text-align: left;
+    text-transform: uppercase;
+    color: gray;
+    background-color: silver;
+    border-radius: 2px;
+    font-size: 1.5em;
+}
+.popup-facture-formv input{
+    width: auto;
+}
+
+input#code-factv{
+    position: relative;
+    bottom: 0px;
+    border-radius: 1px;
+    border: 1px solid silver;
+    font-size: 1em;
+   text-align: left;
+    
+}
+/*tableau  des vente multiple et facturation*/
+.popup-tableauformfactc{
+    position:fixed;
+    top: 25%;
+    left: 50%;
+    right: 5%;
+    bottom: 22%;
+    background: #FFF;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 5px;
+    overflow-y: auto;
+    overflow-x: auto;
+    width: 48%;
+    padding: 0%;
+    margin: 0%;   
+}
+/*style pour les tableau*/
+.tableaufactc{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fefefe;
+}
+thead.entetefactc th{
+    color: #fefefe; 
+    background-color:green;
+    border: 3px solid white; 
+    text-align: left;
+    width: 0%;    
+}
+   
+
+tbody tr:nth-child(odd){
+    background-color: gainsboro;
+   
+}
+tbody tr:nth-child(even){
+    
+    background-color: #fd9d9d;
+}
+tbody tr:nth-child(odd):hover{
+    background-color: blue;
+    color: #FFFFFF;
+    border: 1px solid white;
+}
+tbody tr:nth-child(even):hover{
+    background-color: blue;
+    color: #FFFFFF;
+    border: 1px solid white;
+}
+
+
+/*approvisionnement*/
+
+#popup-overlayapprov{
+    position: fixed;
+    top: 10%;
+    left: 20%;
+    right: 1%;
+    bottom: 10%;
+    display: none;
+    background: #FFFFFF;
+    border: 2px solid #FFF;
+    border-radius: 5px;
+}
+.popup-contentapprov{
+    position: fixed;
+    display: flex;
+    top: 15%;
+    left: 20%;
+    right: 1%;
+    bottom: 10%;
+    background: silver;
+    border: 2px solid #FFF;
+    border-radius: 5px;
+    
+}
+.popup-exitapprov{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: #000;
+    background-color: #FFF;
+    border-radius: 2px;
+}
+.popup-exitapprov:hover{
+    border-radius: 2px;
+    padding: 0% 1% 0% 1%;
+    margin: 0% 0% 1% 0%;
+    color: #FFF;
+    border: 1px solid #f20606;
+    background-color: #f20606;
+}
+h3.popup-approv{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-transform: uppercase;
+    color: #000;
+    background-color: #FFF;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+h1.popup-approv-liste{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-transform: uppercase;
+    color: hsl(16, 94%, 31%);
+    background-color: silver;
+    border-radius: 2px;
+}
+.popup-btnapprov{
+    position: absolute;
+    top: 10%;
+    margin-right: 0%;
+    right: 0%;
+    text-transform: uppercase;
+    color: #024f02;
+    background-color: silver;
+    border-radius: 2px;
+    font: 1em sans-serif;
+
+}
+
+/*tableau pour afficher la listes des produit vendu s*/
+.popup-tableauapprov{
+    position:fixed;
+    top: 23%;
+    left: 21%;
+    right: 50%;
+    bottom: 22%;
+    background: #FFF;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 5px;
+    overflow-y: auto;
+    overflow-x: auto;
+    width: 63%;
+    padding: 0%;
+    margin: 0%; 
+    
+}
+/*style pour les tableau*/
+.tableauapprov{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fefefe;
+}
+thead.enteteapprov th{
+    color: #fefefe; 
+    background-color:brown;
+    border: 3px solid white; 
+    text-align: left;
+    width: 0%;    
+}
+   
+
+    tr:nth-child(odd){
+    background-color: gainsboro;
+   
+}
+    tr:nth-child(even){
+    
+    background-color: #fd9d9d;
+}
+    tr:nth-child(odd):hover{
+    background-color: blue;
+    color: #FFFFFF;
+    border: 1px solid white;
+}
+    tr:nth-child(even):hover{
+    background-color: blue;
+    color: #FFFFFF;
+    border: 1px solid white;
+}
+
+
+/*sous popup aprovisionnement*/
+
+#popup-Ajout-aprov{
+    position: fixed;
+    top: 10%;
+    left: 64%;
+    bottom: 10%;
+    display: none;
+    background: silver;
+    border: 3px solid maroon;
+    border-radius: 5px;
+    width: 35%;
+    
+}
+.popup-formaprov{
+    position: fixed;
+    top: 15%;
+    left: 64%;
+    bottom: 10%;
+    background: silver;
+    border: 3px solid maroon;
+    border-radius: 5px;
+    width: 35%   
+}
+h3.popup-aprov{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-transform: uppercase;
+    color: #000;
+    background-color: silver;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+.popup-exitssaprov{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: #000;
+    background-color: silver;
+    
+}
+.popup-exitssaprov:hover{
+    border-radius: 2px;
+    padding: 0% 1% 0% 1%;
+    margin: 0% 0% 1% 0%;
+    color: #FFF;
+    border: 1px solid #f20606;
+    background-color: #f20606;
+}
+.popup-cadreaprov{
+    margin-top: 10%;
+    border: 3px solid maroon;
+    background-color: silver;
+    border-radius: 5px;
+    width: auto;
+    height: auto;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-left: 15%;
+    padding-right: 10%;
+    text-align: center;
+    font-size: 1em;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: maroon;
+    
+    
+}
+
+.info-aprov{
+font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+color: #FFF;
+border: 1px solid black;
+border-radius: 5px;
+background-color: maroon;
+}
+
+.popup-cadreaprov input,label{
+    margin: 10px;
+    font-family: fantasy;
+    font-size: 1.5em;
+    border-radius: 5px;
+}
+.popup-btnvente-formapprov{
+bottom: 0%;
+background-color: silver;
+}
+button#article-annnuler{
+     position: fixed;
+    bottom: 10%;
+    margin-left: 0%;
+    text-transform: uppercase;
+    color: #FFF;
+    background-color: maroon;
+    border-radius: 5px;
+    font-size: 2em;
+
+}
+button.article-valider{
+    position: fixed;
+    bottom: 10%;
+    margin-left: 25%;
+    text-transform: uppercase;
+    color: #FFF;
+    background-color: maroon;
+    border-radius: 5px;
+    font-size: 2em;
+
+}
+
+
+/*achat*/
+
+#popup-overlayachat{
+    position: fixed;
+    top: 10%;
+    left: 20%;
+    right: 1%;
+    bottom: 10%;
+    display: none;
+    background: #FFF;
+    border: 2px solid #FFF;
+    border-radius: 5px;
+}
+.popup-contentachat{
+    position: fixed;
+    display: flex;
+    top: 15%;
+    left: 20%;
+    right: 1%;
+    bottom: 10%;
+    background: silver;
+    border: 2px solid #FFF;
+    border-radius: 5px;
+    
+}
+.popup-exitachat{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: #000;
+    background-color: #FFF;
+    border-radius: 2px;
+}
+.popup-exitachat:hover{
+    border-radius: 2px;
+    padding: 0% 1% 0% 1%;
+    margin: 0% 0% 1% 0%;
+    color: #FFF;
+    border: 1px solid #f20606;
+    background-color: #f20606;
+}
+h3.popup-achat{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-transform: uppercase;
+    color: #000;
+    background-color: #FFF;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+h1.popup-achat{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-transform: uppercase;
+    color: rgb(4, 4, 122);
+    background-color: silver;
+    border-radius: 2px;
+}
+.popup-btnachat{
+    position: absolute;
+    top: 10%;
+    right: 0%;
+    text-transform: uppercase;
+    color: #024f02;
+    background-color: silver;
+    border-radius: 2px;
+    font: 1em sans-serif;
+
+}
+
+/*tableau pour afficher la listes des produit vendu s*/
+.popup-tableauachat{
+    position:fixed;
+    top: 23%;
+    left: 21%;
+    right: 50%;
+    bottom: 22%;
+    background: #FFF;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 5px;
+    overflow-y: auto;
+    overflow-x: auto;
+    width: 63%;
+    padding: 0%;
+    margin: 0%; 
+    
+}
+.tableauachat{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #FFFFFF;
+}
+thead.enteteachat th{
+    color: #FFFFFF; 
+    background-color:blue;
+    border: 2px solid #FFFFFF; 
+    width: auto; 
+    text-align: center;
+}
+.corp tr:nth-child(odd){
+    background-color: gainsboro; 
+}
+.corp tr:nth-child(even){
+    
+    background-color: #fd9d9d;
+}
+tbody tr:nth-child(odd):hover{
+    background-color: blue;
+    color: #FFFFFF;
+    border: 1px solid white;
+}
+tbody tr:nth-child(even):hover{
+    background-color: blue;
+    color: #FFFFFF;
+    border: 1px solid white;
+}
+
+/* sous popup pour formulaire achat*/
+
+#popup-Ajoutachat{
+    position: fixed;
+    top: 10%;
+    left: 60%;
+    height: 80%;
+    display: none;
+    background: silver;
+    border:3px solid blue;
+    border-radius: 5px;
+    width: 39%;
+    
+}
+.popup-formachat{
+    position: fixed;
+    top: 15%;
+    left: 60%;
+    height: 75%;
+    background: silver;
+    border: 1px solid blue;
+    border-radius: 5px;
+    width: 39%
+
+    
+}
+h3.popup-achata{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-transform: uppercase;
+    color: #000;
+    background-color: silver;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+.popup-exitsachat{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: #000;
+    background-color: silver;
+}
+.popup-exitsachat:hover{
+    border-radius: 2px;
+    padding: 0% 1% 0% 1%;
+    margin: 0% 0% 1% 0%;
+    color: #FFF;
+    border: 1px solid #f20606;
+    background-color: #f20606;
+}
+div.formachat{
+    position: absolute;
+    border: 3px solid blue;
+    background-color: silver;
+    top: 0%;
+    right: 40%;
+    left: 0%;
+    width: 100%;
+    height: 100%;  
+     
+}
+.popup-cadre1-achat{
+    position: fixed;
+    margin-top: 0%;
+    border: 3px solid blue;
+    background-color: rgb(216, 223, 225);
+    margin-left: 2%;
+    width: 35%;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 5px;
+}
+.popup-cadre2-achat{
+     position: fixed;
+    margin-top: 13%;
+    border: 3px solid blue;
+    background-color: rgb(216, 223, 225);
+    margin-left: 2%;
+    width: 35%;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 5px;
+}
+.popup-cadre1-achat input {
+    box-sizing: border-box;
+    width: 50%;
+}
+.popup-cadre2-achat input {
+    box-sizing: border-box;
+    width: 50%;
+}
+.champcourtb{
+    box-sizing: border-box;
+    width: 25%;
+}
+.info-achat{
+font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+color: #fefefe;
+border: 3px solid blue;
+border-radius: 5px;
+background-color: blue;
+}
+
+.popup-cadrea label,p,input,button{
+    margin: 10px;
+    font-family: fantasy;
+}
+.popup-cadreb p,input,button{
+    margin: 10px;
+    font-family: fantasy;
+}
+
+button.valider{
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    text-transform: uppercase;
+    color: #FFF;
+    background-color: blue;
+    border-radius: 2px;
+    font-size: 2em;
+
+}
+
+
+/*client/fournisseur*/
+
+#popup-overlay-CF{
+    position: fixed;
+    top: 10%;
+    left: 20%;
+    right: 1%;
+    bottom: 10%;
+    display: none;
+    background: #FFFFFF;
+    border: 2px solid #FFF;
+    border-radius: 5px;
+}
+.popup-contentCF{
+    position: fixed;
+    display: flex;
+    top: 15%;
+    left: 20%;
+    right: 1%;
+    bottom: 10%;
+    background: silver;
+    border: 2px solid #FFF;
+    border-radius: 5px;
+    
+}
+.popup-exitCF{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: #000;
+    background-color: #FFF;
+    border-radius: 2px;
+}
+.popup-exitCF:hover{
+    border-radius: 2px;
+    padding: 0% 1% 0% 1%;
+    margin: 0% 0% 1% 0%;
+    color: #FFF;
+    border: 1px solid #f20606;
+    background-color: #f20606;
+}
+h3.popup-CF{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-transform: uppercase;
+    color: #000;
+    background-color: #FFF;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+h1.popup-CF-liste{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-transform: uppercase;
+    color: indigo;
+    background-color: silver;
+    border-radius: 2px;
+}
+.popup-btnCF{
+    position: absolute;
+    top: 10%;
+    right: 0%;
+    text-transform: uppercase;
+    color: #024f02;
+    background-color: silver;
+    border-radius: 2px;
+    font: 1em sans-serif;
+
+}
+
+/*tableau pour afficher la listes des cf s*/
+.popup-tableauCF{
+    position:fixed;
+    top: 23%;
+    left: 21%;
+    right: 50%;
+    bottom: 22%;
+    background: #FFF;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 5px;
+    overflow-y: auto;
+    overflow-x: auto;
+    width: 63%;
+    padding: 0%;
+    margin: 0%; 
+    
+}
+.tableauCF{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #FFFFFF;
+}
+thead.enteteCF th{
+    color: #FFFFFF; 
+    background-color:indigo;
+    border: 3px solid #FFFFFF; 
+    width: 0%; 
+    text-align: center;
+}
+
+/*sous popup cf*/
+
+#popup-Ajout-CF{
+    position: fixed;
+    top: 10%;
+    left: 60%;
+    height: 75%;
+    display: none;
+    background: silver;
+    border: 3px solid indigo;
+    border-radius: 5px;
+    width: 39%;
+    
+}
+.popup-formCF{
+    position: fixed;
+    top: 15%;
+    left: 60%;
+    height: 75%;
+    background: silver;
+    border: 3px solid indigo;
+    border-radius: 5px;
+    width: 39%
+
+    
+}
+h3.popups-CF{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-transform: uppercase;
+    color: #000;
+    background-color: silver;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+.popup-exitsCF{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: #000;
+    background-color: silver;
+    
+}
+.popup-exitsCF:hover{
+    border-radius: 2px;
+    padding: 0% 1% 0% 1%;
+    margin: 0% 0% 1% 0%;
+    color: #FFF;
+    border: 1px solid #f20606;
+    background-color: #f20606;
+}
+
+.popup-cadrecf{
+   position: fixed;
+    border: 2px solid indigo;
+    border-radius: 5px;
+    background-color: rgb(216, 223, 225);
+    margin: auto;
+    width: 30%;
+    box-sizing: border-box; 
+    margin-top: 0%;
+    margin-left: 5%;
+    margin-bottom: 2%;
+    font: 1em sans-serif;
+    text-align: center;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+.popup-cadrecf option,label, input {
+    font-size: 14px; 
+   width: 100%;
+   border-radius: 5px;    
+}
+select.chois{
+    
+    background-color: #fefefe;
+}
+.info-cf{
+font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+color: #FFFFFF;
+border: 2px solid black;
+border-radius: 5px;
+background-color: indigo;
+text-align: center;
+margin-left: 2%;
+}
+button.cfannuler{
+    position: absolute;
+    bottom: 1%;
+    left: 0%;
+    text-transform: uppercase;
+    color: #FFF;
+    background-color: red;
+    border-radius: 2px;
+    font-size: 1.5em;
+}
+
+button.validercf{
+    position: absolute;
+    bottom: 1%;
+    right: 0%;
+    text-transform: uppercase;
+    color: #FFF;
+    background-color: indigo;
+    border-radius: 2px;
+    font-size: 1.5em;
+}
+
+
+/*utilisateur*/
+
+#popup-overlay-user{
+    position: fixed;
+    top: 10%;
+    left: 20%;
+    right: 1%;
+    bottom: 10%;
+    display: none;
+    background: #FFFFFF;
+    border: 2px solid #FFF;
+    border-radius: 5px;
+}
+.popup-contentuser{
+    position: fixed;
+    display: flex;
+    top: 15%;
+    left: 20%;
+    right: 1%;
+    bottom: 10%;
+    background: silver;
+    border: 2px solid #FFF;
+    border-radius: 5px;
+    
+}
+.popup-exituser{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: #000;
+    background-color: #FFF;
+    border-radius: 2px;
+}
+.popup-exituser:hover{
+    border-radius: 2px;
+    padding: 0% 1% 0% 1%;
+    margin: 0% 0% 1% 0%;
+    color: #FFF;
+    border: 1px solid #f20606;
+    background-color: #f20606;
+}
+h3.popup-user{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-transform: uppercase;
+    color: #000;
+    background-color: #FFF;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+h1.popup-user-liste{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-transform: uppercase;
+    color: black;
+    background-color: silver;
+    border-radius: 2px;
+}
+.popup-btn-user{
+    position: absolute;
+    top: 10%;
+    right: 0%;
+    text-transform: uppercase;
+    color: #024f02;
+    background-color: silver;
+    border-radius: 2px;
+    font: 1em sans-serif;
+
+}
+
+/*tableau pour afficher la listes des user s*/
+.popup-tableau-user{
+    position:fixed;
+    top: 23%;
+    left: 21%;
+    right: 50%;
+    bottom: 22%;
+    background: #FFF;
+    box-sizing: border-box;
+    border: 2px solid black;
+    border-radius: 5px;
+    overflow-y: auto;
+    overflow-x: auto;
+    width: 63%;
+    padding: 0%;
+    margin: 0%; 
+    
+}
+.tableau-user{
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #FFFFFF;
+}
+thead.entete-user th{
+    color: #FFFFFF; 
+    background-color:grey;
+    border: 3px solid #FFFFFF; 
+    width: 0%; 
+    text-align: center;
+}
+
+/*sous popup user*/
+
+#popup-Ajout-user{
+    position: fixed;
+    top: 10%;
+    left: 60%;
+    height: 75%;
+    display: none;
+    background: silver;
+    border: 3px solid black;
+    border-radius: 5px;
+    width: 39%;
+    
+}
+.popup-formuser{
+    position: fixed;
+    top: 15%;
+    left: 60%;
+    height: 75%;
+    background: silver;
+    border: 3px solid black;
+    border-radius: 5px;
+    width: 39%
+}
+h3.popups-user{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-transform: uppercase;
+    color: #000;
+    background-color: silver;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+.popup-exitsuser{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: #000;
+    background-color: silver;
+    
+}
+.popup-exitsuser:hover{
+    border-radius: 2px;
+    padding: 0% 1% 0% 1%;
+    margin: 0% 0% 1% 0%;
+    color: #FFF;
+    border: 1px solid #f20606;
+    background-color: #f20606;
+}
+
+.popup-cadreuser{
+    position: fixed;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgb(216, 223, 225);
+    margin: auto;
+    width: 22%;
+    box-sizing: border-box; 
+    margin-top: 0%;
+    margin-left: 9%;
+    margin-bottom: 2%;
+    font: 1em sans-serif;
+    text-align: center;
+    padding-right: 2%;
+    padding-left: 1%;
+}
+.popup-cadreuser option,label, input,select {
+   font-size: 14px; 
+   width: 100%;
+   border-radius: 5px;
+}
+
+select.chois{
+   
+    background-color: #fefefe;
+}
+.info-user{
+font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+color: #FFFFFF;
+border: 2px solid black;
+border-radius: 5px;
+background-color: black;
+text-align: center;
+margin-left: 10%;
+}
+
+button.annuler-user{
+    position: absolute;
+    bottom: 1%;
+    left: 0%;
+    text-transform: uppercase;
+    color: #FFF;
+    background-color: red;
+    font-size: 1.5em;
+    border-radius: 5px;
+}
+button.valider-user{
+    position: absolute;
+    bottom: 1%;
+    right: 0%;
+    text-transform: uppercase;
+    color: #FFF;
+    background-color: black;
+    border-radius: 5px;
+    font-size: 1.5em;
+
+}

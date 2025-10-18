@@ -1,0 +1,37 @@
+$codeArticle=isset($_POST["codearticle"])?  trim($_POST["codearticle"]):'';
+$libelleArticle=isset($_POST["codearticle"])? trim($_POST["codearticle"]):'';
+$prixVente=isset($_POST["prixvente"])? trim($_POST["prixvente"]):'';
+$datejrs=isset($_POST["datejrs"])? trim($_POST["datejrs"]):'';
+$today=date("Y-m-d");
+
+//verification cote serveur
+if(empty($codeArticle)||empty($libelleArticle)||empty($prixVente)|| empty($datejrs)){
+    ?>	<SCRIPT LANGUAGE="Javascript">alert("Error :Tous les champs doivent être remplis.");</SCRIPT>
+                <?php
+                include("menu.php");
+}elseif($prixVente<=0){
+    echo "";
+    ?>	<SCRIPT LANGUAGE="Javascript">alert("Error:Le prix doit être un nombre positif !");</SCRIPT>
+                <?php
+                include("menu.php");
+}elseif($datejrs!==$today){
+    ?>	<SCRIPT LANGUAGE="Javascript">alert("Error:Merci de bien vouloir entrer la date du jour !");</SCRIPT>
+                <?php
+                include("menu.php");
+}else{
+    $sql = "INSERT INTO article (Code_Article, Libelle_Article, Prix_Vente, Date_Ajout)
+            VALUES ('$codeArticle', '$libelleArticle', '$prixVente', '$datejrs')";
+            if ($conn->query($sql) === TRUE) {
+                ?>	<SCRIPT LANGUAGE="Javascript">alert("L'article a été enregistré avec succès.");</SCRIPT>
+                <?php
+                include("menu.php");
+                
+               
+
+            } else {
+                echo "Erreur : " . $sql . "<br>" . $conn->error;
+            }
+        
+            $conn->close();
+}
+?>

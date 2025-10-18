@@ -1,0 +1,184 @@
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	padding: 1%;
+	margin: 0%;
+	background-color: #FFFFFF;
+}
+#connexion{
+	background-color: #008080;
+	border: 5px double #008080;
+	border-radius: 15PX;
+	width: 100%;
+}
+#connexion h3{
+background-color: #008080;
+margin: 0PX;
+text-align:left;
+text-transform: uppercase;
+width: auto;
+height: auto;
+font-size: 1em;
+border: 2PX solid #0000FF;
+color: #000000;
+border-radius: 10PX;
+border-color: #FFFFFF;
+}
+#acceuil{
+	background-color: #C0C0C0;
+	border-radius: 10PX;
+	border: 1PX solid #FFFFFF;
+}
+#acceuil h2{
+	background-color: #008080;
+	font-size:0.5em ;
+	font-style:normal;
+	font-family: sans-serif;
+	font-weight: bolder;
+	text-align: center;
+	border: 2PX solid #FFFFFF;
+	border-radius: 10PX;
+	color: #FFFFFF;
+}
+#acceuil legend{
+	background-color: #008080;
+	font-size:1em ;
+	font-style: normal;
+	font-family: fantasy;
+	font-weight: bolder;
+	text-align: center;
+	color: #000000;
+	border-radius: 10PX;
+	border: 2px solid #008080;
+	border-color: #FFFFFF;
+}
+#acceuil fieldset{
+	border-radius: 10PX;
+	text-align:center;
+	border: 2PX solid #008080;
+	width: 70%;
+	padding: 0PX;
+	padding-left: 0PX;
+	padding-right: 0PX;
+	margin-bottom: 100%;
+	margin-left: 12%;
+}
+#acceuil button{
+	color: #FFFFFF;
+	font-size: 1em;
+	border-radius: 10PX;
+	border: 2PX solid #FFFFFF;
+	text-align:center;
+	background-color: #008080;
+}
+#acceuil input{
+	background-color: #FFFFFF;
+	color: #008080;
+	font-size: 0.5em;
+	text-align:center;
+    border: 2PX solid #FFFFFF;
+	border-color: #FFFFFF;
+	border-radius: 10PX;
+}
+#acceuil P{
+	background-color: #C0C0C0;
+	color: #000000;
+	font-size: 2em;
+	text-align:center;
+	border: 2PX solid #C0C0C0;
+	border-radius: 10PX;
+}
+/*code css responsive*/
+@media all and (min-width: 1024px) and
+(orientation:landscape),
+(max-width: 1280px) and
+(aspect-ratio:16/9) {
+	body{
+	background-color: #008080;
+	
+}
+div#connexion{
+	background-color: #008080;
+	border: 5px double #FFFFFF;
+	border-radius: 10PX;
+	width: 100%;
+	
+}
+div#connexion h3{
+background-color: #FFFFFF;
+margin: 0PX;
+text-align: left;
+text-decoration: blink;
+width: auto;
+height: auto;
+font-size: 2em;
+border: 2PX solid orange;
+border-color: orange;
+border-radius: 10PX;
+}
+div#acceuil{
+	background-color: #008080;
+}
+div#acceuil h2{
+	background-color: #008080;
+	font-size:2em ;
+	font-style: italic ;
+	font-family: fantasy;
+	font-weight: bolder;
+	text-align: center;
+	color: #FFFFFF;
+	border-radius: 10PX;
+}
+div#acceuil legend{
+	font-size:2em ;
+	font-style: normal;
+	font-family: fantasy;
+	font-weight: bolder;
+	text-align: center;
+	color: #000000;
+	border: 2px solid #FFFFFF;
+	border-radius: 10PX;
+	margin-left:2%;
+
+}
+div#acceuil fieldset{
+	border-left-width: 15px;
+	border-top-left-radius: 25PX;
+	border-bottom-right-radius: 30PX;
+	text-align:center;
+	border: 2PX solid #FFFFFF;
+	height: auto;
+	width: 50%;
+	padding: 0PX;
+	border-radius: 10PX;
+	margin-left: 25%;
+}
+div#acceuil button{
+	background-color: #C0C0C0;
+	color: #000000;
+	font-size: 2em;
+	border-radius: 10PX;
+	text-align:center;
+	border: 2PX solid #000000;
+
+}
+div#acceuil P{
+	background-color: #008080;
+	color: #000000;
+	font-size: 3em;
+	text-align:center;
+	border: 2px solid #008080;
+	border-radius: 10PX;
+
+}
+div#acceuil input{
+	border: 3PX solid #000000;
+	color: #000000;
+	font-size: 0.5em;
+	text-align:center;
+	border-radius: 10PX;
+}
+
+}
+
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Page des ventes effectuees</title>
+	<link rel="stylesheet" href="menu.css">
+</head>
+<body>
+<!--popup pour formulaire ajouter vente-->
+<div id="popup-Ajout" class="popup-form">
+	<h3 class="popup-espace">VENTE</h3>
+	<a href="javascript:void(0)" id="close-popup" class="popup-exit">X</a>
+	<div class="popup-content">
+		<form method="post" action="./fichierhtml/menu.html">
+			<fieldset>
+				<legend>information sur l'article!</legend>
+				<button onclick="choixArticle">Choix de l'article</button>
+			<p>Code de l'article:<input type="text" required name="IdArticle" placeholder="00001PCHP" id="" disabled></P>
+			<P>Libellé de l'article :<input type="text" required name="libelleArticle"placeholder="ORDINATEUR HP" id="" disabled></P>
+			</fieldset>
+			<fieldset>
+				
+				<legend>Information sur la vente</legend>
+			<p>Prix:<input type="text" required name="IdArticle" placeholder="00001PCHP" id=""></P>
+			<p>Quantité:<input type="number" required name="IdArticle" placeholder="00001PCHP" id="">
+			Qté en stock:<input style="background-color: rgb(155, 4, 4);color: #FFFFFF;" type="text" name="qtéstock" placeholder="250" disabled></P>
+			<p>Montant:<input type="text" required name="IdArticle" placeholder="00001PCHP" id=""></P>
+			<P>Datte :<input type="date" required name="date"placeholder="jj-mm-aa" id=""></P>
+			</fieldset>
+		</form>
+	</div>
+	<h2 class="popup-facture"> Code Facture:<input type="text" name="codfact" disabled placeholder="Fact16/11/2024A 346" id="code-fact"> 
+	
+	</h2>
+		<div class="popup-tableau">
+			<table class="tableau">
+				<thead entete>
+					<th>Code Article</th>
+					<th>Libelle Article</th>
+					<th>Prix de Vente</th>
+					<th>Quantité Vente</th>
+					<th>Montant Vente</th>
+					<th>Date Vente</th>
+				</thead>
+				<tr>
+					<td>HP001PC</td>
+					<td>ORDINATEUR PORTBLE HP G </td>
+					<td>450000</td>
+					<td>2</td>
+					<td>900000</td>
+					<td>16 OCTOBRE 2024</td>
+				</tr>
+			</table>
+		</div>	
+			<p class="popup-btnvente">
+				<button onclick="ajouterdonnees('popupajouter')" style="background-color: green; border: 2PX solid #FFFFFF; font-size:2.5em;color: #FFFFFF; border-radius: 5px 5px 5px 5px;">AJOUTER A LA LISTE</button>
+				<button onclick="validerDonnees('valider')"style="background-color: blue;border: 2PX solid #FFFFFF; font-size:2.3em;color: #FFFFFF; border-radius: 5px 5px 2px 5px;">PASSER A LA CAISSE</button>
+			</p>
+	</div>
+</div>
+</body>
+</html>

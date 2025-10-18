@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>connexion et inscription</title>
+	<link rel="stylesheet" href="../dossiercss/index.css">
+	<script src="../dossierjs/index.js"></script>
+</head>
+<body>
+	<div id="connexion">
+		<h3>ESPACE DE FORMULAIRE D'SINSCRIPTION</h3>
+			<div id="acceuil">
+				<h2>BIENVENUE DANS VOTRE APPLICATION WEBE DES GESTION DES VENTES DES ACHATS ET DES STOCKS</h2>
+					<form id="signupForm" action="../dossierphp/inscription.php" method="POST">
+						<fieldset>
+							<legend>Inscrivez-vous!</legend><br/>
+                            <div style="display:flex; justify-content: space-between;gap: 50px; flex-wrap: wrap;align-items: center; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;font-size: 1.5em; margin: 20px;">
+      						 <label for="nom">Nom : <input type="text" id="nom" name="nom" required placeholder="Ex : YEO" /></label>
+
+       						<label for="nom">Prenom : <input type="text" id="nom" name="prenom" required placeholder="Ex : Kolo de la rue2" /></label>
+
+      						<label for="email">Mail : <input type="email" id="email" name="email" required placeholder="Ex : yeokolo@gmail.com" /></label>
+
+      						<label for="telephone">Contacte : <input type="tel" id="telephone" name="telephone" required placeholder="0100000055" /></label>
+
+							<label for="nom">login : <input type="email" id="username" name="username" required placeholder="entrez votre mail ici svp!" /></label>
+
+							<label for="type-fonction">Fonction :<select id="type-fonction" name="type_fonction" required>
+ 					 		<option value="">-- Choisir --</option>
+  							<option value="userv">Vendeur</option>
+ 							<option value="userstock">Gestionnaire de stock</option>
+  							<option value="usersecretaire">Sécretaire caisse</option>
+ 			 				<option value="usercomptable">Comptable</option>
+  						 <option value="useradminAP">Supperviseur</option>
+  						<option value="useradminAG">Administrateur</option>
+  					<option value="userinfos">Service informatique</option>
+					</select></label>
+				<label for="motdepasse">Mot de passe : <input type="password" id="motdepasse" name="motdepasse" required minlength="8" /></label>
+        
+    			<label for="confirmation">Confirmer : <input type="password" id="confirmation" name="confirmation" required minlength="8" /></label><br/><br/>
+        
+      		<button type="submit">S'inscrire</button>  <a href="../index.html">Sé connecter</a><br/><br/>
+			</div>
+	    </fieldset>
+        </form>
+			
+	</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,150 @@
+body{
+	padding: 1%;
+	margin: 0%;
+	background-color: #C0C0C0
+
+}
+.titre{
+	background-color: #008080;
+	border: 5px double #000080;
+	border-radius: 15PX;
+	width: 100%;
+}
+.titre p{
+	background-color: #008080;
+	margin: 0%;
+	text-align:left;
+	text-transform: uppercase;
+	width: auto;
+	height: auto;
+	font-size: 0.5em sans-serif;
+	border: 2PX solid #0000FF;
+	color: #000000;
+	border-radius: 10PX;
+	border-color: #FFFFFF;
+	
+}
+.contener{
+	height: auto;
+	width: 100%;
+	background-color: #C0C0C0;
+	padding:0%;
+	margin: 0%;
+	border: 2px solid #C0C0C0;
+	border-radius: 10px;;
+}
+/*menu vertical comportant les different menu*/
+.menu{
+	height: auto;
+	width: 20%;
+	padding: 0%;
+	margin: 0%;
+	background-color: #C0C0C0;
+}
+
+.menu button{
+	width: 100%;
+	padding: 0%;
+	margin: 2% 0%;
+	background-color: #F5FBFF;
+	border: 1PX solid #000080;
+	font-size: 12px;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	border-left-width:4PX ;
+}
+
+.menu button:hover{
+	color: #993;
+	background-color: #f4fbdc;
+	border: 1PX solid #993;
+	border-left-width:4PX ;
+}
+.menu button:active{
+	color: #FFC300;
+	background-color: #FDFFA5;
+	border: 1PX solid #FFC300;
+	border-left-width:4PX ;
+}
+
+/*code css responsive*/
+@media all and (min-width: 1024px) and
+(orientation:landscape),
+(max-width: 1280px) and
+(aspect-ratio:16/9) {
+	body{
+		padding: 0%;
+		margin: 0%;
+		background-color: #000080;
+	
+	}
+	.titre{
+		position: fixed;
+		margin: 0%;
+		padding: 0% 1%;
+		width: auto;
+		height: a;
+		text-align: left;
+		justify-items: center;
+		justify-content: space-between;
+		background-color:#000080;
+	}
+	.titre p{
+		margin: 2%;
+		padding: 0%;
+		height: auto;
+		width: 100%;
+		font: 2em sans-serif;
+		font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+		color: white;
+		line-height: 2PX;
+		text-align: left;
+		text-decoration: blink;
+		border-radius: 10PX;
+		background-color: #000080;
+		border-color: #000080;
+		text-decoration: underline;
+		text-decoration-color: #FFFFFF;
+
+	}
+	.contener{
+		background-color: #000080;
+		padding:3% 2%;
+		margin: 0%;
+
+		border: 2px solid #000080;
+	}
+	/*menu vertical comportant les different menu*/
+	.menu{
+		padding: 1%;
+		margin: 0%;
+		text-align: left;
+		width: 15%;
+		background-color: #000080;
+	}
+	
+	.menu button{
+		width: 100%;
+		padding: 5%;
+		background-color: #F5FBFF;
+		border: 1PX solid #000080;
+		font: 1em sans-serif;
+		font-size: larger;
+		font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+		border-left-width:4PX ;
+	}
+	
+	.menu button:hover{
+		color: #993;
+		background-color: #f4fbdc;
+		border: 1PX solid #993;
+		border-left-width:4PX ;
+	}
+	.menu button:active{
+		color: #FFC300;
+		background-color: #FDFFA5;
+		border: 1PX solid #FFC300;
+		border-left-width:4PX ;
+	}	
+}
+
+

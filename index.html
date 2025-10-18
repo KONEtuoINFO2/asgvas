@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>connexion et inscription</title>
+	<link rel="stylesheet" href="./dossiercss/index.css">
+	<script src="./dossierjs/index.js"></script>
+</head>
+<body>
+	<div id="connexion">
+		<h3>ESPACE DE CONNEXION && INSCRIPTION</h3>
+		<div id="acceuil">
+			<h2>BIENVENUE DANS VOTRE APPLICATION WEBE DES GESTION DES VENTES DES ACHATS ET DES STOCKS</h2>
+		
+			<form  action="./dossierphp/connexion.php" method="post">
+				<fieldset>
+					<legend>Authentifiez-vous!</legend>
+				<p>Login:<input type="text" required name="login" placeholder="nom utilisateur" id="login"></P>
+				<P>Code :<input type="password" required name="mdp"placeholder="Mot de passe"id="mdp" minlength="8"></P>
+				 <a href="./fichierhtml/forminscription.html">CREER UN COMPTE</a>   <button type="submit">🔐 Connexion</button><br><br>
+				</fieldset>
+			</form>
+			</div>
+			</div>
+</body>
+</html>

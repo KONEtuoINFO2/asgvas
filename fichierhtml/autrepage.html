@@ -1,0 +1,290 @@
+Étape 1 : Création du formulaire et affichage dans un popup
+Nous allons construire un formulaire HTML basique et l'afficher dans une fenêtre popup.
+1.1 Structure HTML
+Ajoute ce code dans ton fichier HTML pour créer la base du popup
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Articles</title>
+    <style>
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+            z-index: 1000;
+        }
+        #overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+    </style>
+</head>
+<body>
+
+<button onclick="ouvrirPopup()">Ajouter un Article</button>
+
+<div id="overlay"></div>
+<div id="popup">
+    <form id="articleForm">
+        <label>Code Article: <input type="text" id="codearticle" required ></label><br>
+        <label>Libellé Article: <input type="text" id="libellearticle" required ></label><br>
+        <label>Prix Vente: <input type="number" id="prixvente" required ></label><br>
+        <label>Date Approvisionnement: <input type="date" id="dateappro" required ></label><br>
+        <button type="submit">Enregistrer</button>
+        <button type="button" onclick="fermerPopup()">Fermer</button>
+    </form>
+</div>
+
+<script>
+    function ouvrirPopup() {
+        document.getElementById("popup").style.display = "block";
+        document.getElementById("overlay").style.display = "block";
+    }
+
+    function fermerPopup() {
+        document.getElementById("popup").style.display = "none";
+        document.getElementById("overlay").style.display = "none";
+    }
+</script>
+
+</body>
+</html>
+
+Étape 2 : Validation des données du formulaire
+Avant d'envoyer les informations vers la base de données, nous allons nous assurer que tous les champs sont correctement remplis et que les valeurs saisies sont valides.
+2.1 Ajout de la validation dans le script JavaScript
+Modifie ton fichier HTML et ajoute ce script à la fin, juste avant la fermeture de </body> :
+
+document.getElementById("articleForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Empêche le rechargement de la page
+
+    let code = document.getElementById("codearticle").value.trim();
+    let libelle = document.getElementById("libellearticle").value.trim();
+    let prix = document.getElementById("prixvente").value;
+    let date = document.getElementById("dateappro").value;
+
+    // Vérification que tous les champs sont remplis
+    if (!code || !libelle || !prix || !date) {
+        alert("Tous les champs doivent être remplis !");
+        return;
+    }
+
+    // Vérification du prix (doit être un nombre positif)
+    if (isNaN(prix) || prix <= 0) {
+        alert("Le prix doit être un nombre positif !");
+        return;
+    }
+
+    // Vérification de la date (ne doit pas être vide)
+    if (new Date(date) > new Date()) {
+        alert("La date d'approvisionnement ne peut pas être dans le futur !");
+        return;
+    }
+
+    // Si tout est valide, envoi des données via AJAX
+    let formData = new FormData(this);
+    fetch("ajouter_article.php", {
+        method: "POST",
+        body: formData
+    }).then(response => response.json())
+      .then(data => {
+          alert(data.message);
+          fermerPopup(); // Ferme le formulaire après ajout
+      })
+      .catch(error => console.error("Erreur :", error));
+});
+
+Étape 3 : Enregistrement des données dans la base de données
+Nous allons maintenant créer un script PHP (ajouter_article.php) qui va :
+1.	Recevoir les données envoyées depuis le formulaire.
+2.	Les insérer dans la base de données MySQL (phpMyAdmin).
+3.	Retourner un message de confirmation.
+3.1 Création de la table dans MySQL
+Avant d’ajouter les données, assure-toi d’avoir une base de données MySQL. Tu peux exécuter cette requête dans phpMyAdmin :
+CREATE DATABASE gestion_articles;
+
+USE gestion_articles;
+
+CREATE TABLE articles (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    codearticle VARCHAR(50) NOT NULL,
+    libellearticle VARCHAR(100) NOT NULL,
+    prixvente DECIMAL(10,2) NOT NULL,
+    dateapprovisionnement DATE NOT NULL
+);
+Étape 4 : Affichage des articles enregistrés dans un tableau
+Nous allons récupérer les articles de la base de données et les afficher dans une table HTML. Ensuite, nous ajouterons des boutons Modifier et Supprimer.
+4.1 Création du fichier afficher_articles.php
+Ajoute ce fichier pour récupérer et afficher les données stockées.
+
+<?php
+$servername = "localhost";
+$username = "root"; // Change si nécessaire
+$password = "";
+$dbname = "gestion_articles";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Vérifier la connexion
+if ($conn->connect_error) {
+    die("Erreur de connexion : " . $conn->connect_error);
+}
+
+// Récupérer les articles
+$sql = "SELECT * FROM articles";
+$result = $conn->query($sql);
+
+echo "<table border='1'>";
+echo "<tr><th>Code Article</th><th>Libellé</th><th>Prix Vente</th><th>Date Approvisionnement</th><th>Actions</th></tr>";
+
+while ($row = $result->fetch_assoc()) {
+    echo "<tr>
+            <td>{$row['codearticle']}</td>
+            <td>{$row['libellearticle']}</td>
+            <td>{$row['prixvente']}</td>
+            <td>{$row['dateapprovisionnement']}</td>
+            <td>
+                <button onclick='modifierArticle({$row['id']})'>Modifier</button>
+                <button onclick='supprimerArticle({$row['id']})'>Supprimer</button>
+            </td>
+          </tr>";
+}
+
+echo "</table>";
+
+$conn->close();
+?>
+Étape 5 : Suppression d’un article
+Nous allons créer un fichier PHP (supprimer_article.php) pour supprimer un article.
+5.1 Création du script PHP
+Ajoute ce fichier dans ton projet :
+
+<?php
+header("Content-Type: application/json");
+
+$servername = "localhost";
+$username = "root"; 
+$password = "";
+$dbname = "gestion_articles";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die(json_encode(["message" => "Erreur de connexion à la base de données"]));
+}
+
+$id = $_GET["id"]; // Récupère l'ID de l’article à supprimer
+
+$sql = $conn->prepare("DELETE FROM articles WHERE id = ?");
+$sql->bind_param("i", $id);
+
+if ($sql->execute()) {
+    echo json_encode(["message" => "Article supprimé avec succès"]);
+} else {
+    echo json_encode(["message" => "Erreur lors de la suppression"]);
+}
+
+$conn->close();
+?>
+
+5.2 Ajout de la suppression en JavaScript
+Dans ton fichier principal (index.html), ajoute cette fonction JavaScript :
+function supprimerArticle(id) {
+    if (confirm("Voulez-vous vraiment supprimer cet article ?")) {
+        fetch(`supprimer_article.php?id=${id}`, {
+            method: "GET"
+        }).then(response => response.json())
+          .then(data => {
+              alert(data.message);
+              chargerArticles(); // Recharge le tableau après suppression
+          });
+    }
+}
+Étape 6 : Modification d’un article
+La modification d’un article nécessite :
+1.	Afficher les infos existantes dans le popup.
+2.	Modifier les données et envoyer la mise à jour vers PHP.
+6.1 Création du script PHP (modifier_article.php)
+Ajoute ce fichier :
+<?php
+header("Content-Type: application/json");
+
+$servername = "localhost";
+$username = "root"; 
+$password = "";
+$dbname = "gestion_articles";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die(json_encode(["message" => "Erreur de connexion à la base de données"]));
+}
+
+$id = $_POST["id"];
+$code = $_POST["codearticle"];
+$libelle = $_POST["libellearticle"];
+$prix = $_POST["prixvente"];
+$date = $_POST["dateappro"];
+
+$sql = $conn->prepare("UPDATE articles SET codearticle=?, libellearticle=?, prixvente=?, dateapprovisionnement=? WHERE id=?");
+$sql->bind_param("ssdsi", $code, $libelle, $prix, $date, $id);
+
+if ($sql->execute()) {
+    echo json_encode(["message" => "Article modifié avec succès"]);
+} else {
+    echo json_encode(["message" => "Erreur lors de la modification"]);
+}
+
+$conn->close();
+?>
+
+6.2 Modification en JavaScript
+Ajoute cette fonction pour afficher l’article existant et envoyer la mise à jour :
+
+function modifierArticle(id) {
+    fetch(`recuperer_article.php?id=${id}`)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("codearticle").value = data.codearticle;
+            document.getElementById("libellearticle").value = data.libellearticle;
+            document.getElementById("prixvente").value = data.prixvente;
+            document.getElementById("dateappro").value = data.dateapprovisionnement;
+            document.getElementById("popup").style.display = "block";
+            document.getElementById("overlay").style.display = "block";
+
+            // Modifier le bouton d'enregistrement pour envoyer une mise à jour
+            document.getElementById("articleForm").addEventListener("submit", function(event) {
+                event.preventDefault();
+                let formData = new FormData(this);
+                formData.append("id", id);
+
+                fetch("modifier_article.php", {
+                    method: "POST",
+                    body: formData
+                }).then(response => response.json())
+                  .then(data => {
+                      alert(data.message);
+                      fermerPopup();
+                      chargerArticles();
+                  });
+            });
+        });
+}
+
+
+10-autre question
+merci j'ai un autre popop contenant un formulaire avec a renseigner automatiquement si user click sur un bouton choisir l'article et un tableau dynamique avec la liste des article ou l'user click sur une ligne pour selectionner l'article ou bien option de recheche soit par  code article et aussi par libelle article si l'user le veux .les champs sont code,libelle,prix,quantite,quantite en stock,montant ,date du jour.le montant change automatiquement si la quantite change et seule la quantite pouvant etre modifier par l'user et si la qutite est superieire a celle en stock pas de vente ni validation
