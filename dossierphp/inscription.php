@@ -3,23 +3,21 @@ require_once '../dataconect/config.inc.php';
 
 // 🛡️ Fonctions de validation personnalisées
 function estNumeroIvoirien($num) {
-    return preg_match('/^(01|05|07|25|27)\d{8}$/', $num);
+    return preg_match('/^(?:\+225)?(01|05|07|25|27)\d{8}$/', $num);
 }
+
 
 function estMotDePasseValide($mdp) {
     return preg_match('/^(?=.*[a-zA-Z])(?=.*\d).{8,}$/', $mdp);
 }
 
 function estNomUtilisateurValide($username) {
-    return preg_match('/^[a-z0-9]+[0-9]*@dem\.com$/', $username) &&
-            strpos($username, '@') !== false &&
-           strpos($username, '.com') !== false;
+    return filter_var($username, FILTER_VALIDATE_EMAIL);
 }
 function estEmailValide($email) {
-    return preg_match('/^[a-z0-9]+[0-9]*@dem\.com$/', $email) &&
-           strpos($email, '@') !== false &&
-           strpos($email, '.com') !== false;
+    return filter_var($email, FILTER_VALIDATE_EMAIL);
 }
+
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // 🔐 Sécurisation des entrées
@@ -77,8 +75,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 if ($membre) {
                     // 📥 Insertion utilisateur
-                    $stmt = $pdo->prepare("INSERT INTO utilisateur (NOM, PRENOM, CONTACT_TEL, MAIL, FONCTION, DATE_AJOUT) VALUES (?, ?, ?, ?, ?, ?)");
-                    $stmt->execute([$nom, $prenom, $contact, $email, $fonction, $date_inscrit]);
+                    $stmt = $pdo->prepare("INSERT INTO utilisateur (NOM, PRENOM, CONTACT_TEL, MAIL, FONCTION, NOM_UTILISATEUR, DATE_AJOUT) VALUES (?, ?, ?, ?, ?, ?, ?)");
+                    $stmt->execute([$nom, $prenom, $contact, $email, $fonction, $usernom, $date_inscrit]);
                     $userId = $pdo->lastInsertId();
 
                     // 🔑 Insertion login
